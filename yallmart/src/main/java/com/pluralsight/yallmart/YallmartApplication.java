@@ -1,4 +1,4 @@
-package com.example.yallmart;
+package com.pluralsight.yallmart;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
