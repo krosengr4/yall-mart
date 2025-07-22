@@ -12,7 +12,7 @@ public interface UserDao {
 
 	User getByUsername(String userName);
 
-	int getIdByUserName(String userName);
+	int getIdByUsername(String userName);
 
 	User create(User user);
 
