@@ -123,6 +123,7 @@ public class MySqlUserDao extends MySqlDaoBase implements UserDao {
 		return user != null;
 	}
 
+	//Maps a result row from MySQL to a User object, returns the User object.
 	private User mapRow(ResultSet row) throws SQLException {
 		int userId = row.getInt("user_id");
 		String username = row.getString("username");
