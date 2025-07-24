@@ -9,7 +9,7 @@ public interface CartDao {
 
 	Cart getByUserId(int userId);
 
-	List<CartItem> getItemsInCart(int userId, int productId);
+	List<CartItem> getItemsInCart(int userId);
 
 	Cart addToCart(int userId, int productId);
 
