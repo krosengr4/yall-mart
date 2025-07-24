@@ -3,13 +3,13 @@ package com.pluralsight.yallmart.models;
 public class Profile {
 
 	private int userId;
-	private String firstName;
-	private String lastName;
-	private String email;
-	private String address;
-	private String city;
-	private String state;
-	private String zip;
+	private String firstName = "";
+	private String lastName = "";
+	private String email = "";
+	private String address = "";
+	private String city = "";
+	private String state = "";
+	private String zip = "";
 
 	public Profile() {}
 
