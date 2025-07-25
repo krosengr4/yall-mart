@@ -41,6 +41,7 @@ public class ProfileController {
 		}
 	}
 
+	//GET URL = localhost:8080/profile
 	@PutMapping("")
 	public void updateProfile(@RequestBody Profile profile, Principal principal) {
 		try {

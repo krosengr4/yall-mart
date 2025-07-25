@@ -65,18 +65,18 @@ public class MySqlProductDao extends MySqlDaoBase implements ProductDao {
         List<Product> results = new ArrayList<>();
         String query = """
                 SELECT * FROM products
-                WHERE (category_id = ? OR ? =-1
+                WHERE (category_id = ? OR ? =-1)
                 AND (price >= ? OR ? = -1)
-                AND (price <= ? OR ? = -1)
+                AND (price <= ? OR ? = -1);
                 """;
         categoryId = categoryId == null
                 ? -1
                 : categoryId;
         minPrice = minPrice == null
-                ? new BigDecimal(-1)
+                ? new BigDecimal("-1")
                 : minPrice;
         maxPrice = maxPrice == null
-                ? new BigDecimal(-1)
+                ? new BigDecimal("-1")
                 : maxPrice;
 
         try (Connection connection = getConnection()) {
@@ -127,7 +127,7 @@ public class MySqlProductDao extends MySqlDaoBase implements ProductDao {
                 VALUES (?, ?, ?, ?, ?)
                 """;
         try (Connection connection = getConnection()) {
-            PreparedStatement stmt = connection.prepareStatement(query);
+            PreparedStatement stmt = connection.prepareStatement(query, PreparedStatement.RETURN_GENERATED_KEYS);
             stmt.setString(1, product.getName());
             stmt.setBigDecimal(2, product.getPrice());
             stmt.setInt(3, product.getCategoryId());
