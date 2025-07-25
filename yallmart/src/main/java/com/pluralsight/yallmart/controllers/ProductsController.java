@@ -3,7 +3,6 @@ package com.pluralsight.yallmart.controllers;
 import com.pluralsight.yallmart.data.CategoryDao;
 import com.pluralsight.yallmart.data.ProductDao;
 import com.pluralsight.yallmart.models.Product;
-import com.pluralsight.yallmart.models.Profile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -19,12 +18,9 @@ import java.util.List;
 public class ProductsController {
 
 	private final ProductDao productDao;
-	private final CategoryDao categoryDao;
-
 	@Autowired
 	public ProductsController(ProductDao productDao, CategoryDao categoryDao) {
 		this.productDao = productDao;
-		this.categoryDao = categoryDao;
 	}
 
 	//THIS METHOD WAS USED FOR TESTING GET ALL METHOD
@@ -46,6 +42,7 @@ public class ProductsController {
 			return productDao.search(categoryId, minPrice, maxPrice);
 		} catch(Exception e) {
 			throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Uh oh... something went wrong.");
+			// Used for debugging. Do not want to show the stack.
 //			throw new RuntimeException(e);
 		}
 	}
@@ -68,6 +65,7 @@ public class ProductsController {
 			return productDao.create(product);
 		} catch(Exception e) {
 			throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Uh oh... something went wrong.");
+			// Used for debugging. Do not want to show the stack.
 //		throw new RuntimeException(e);
 		}
 	}
