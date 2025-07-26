@@ -52,6 +52,8 @@ public class MySqlOrdersDao extends MySqlDaoBase implements OrderDao {
 		List<CartItem> itemsList = new ArrayList<>();
 		String query = """
 				SELECT * FROM order_line_items
+				JOIN orders
+				ON order_line_items.order_id = orders.order_id
 				WHERE user_id = ?;
 				""";
 
@@ -92,6 +94,7 @@ public class MySqlOrdersDao extends MySqlDaoBase implements OrderDao {
 			statement.setString(4, order.getCity());
 			statement.setString(5, order.getState());
 			statement.setString(6, order.getZip());
+			statement.setBigDecimal(7, order.getShippingAmount());
 
 			int rows = statement.executeUpdate();
 			if(rows > 0) {
