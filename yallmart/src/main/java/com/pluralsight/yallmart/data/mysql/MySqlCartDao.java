@@ -86,7 +86,7 @@ public class MySqlCartDao extends MySqlDaoBase implements CartDao {
 					""";
 		} else {
 			query = """
-					INSERT INTO shopping_cart (quantity, order_id, product_id)
+					INSERT INTO shopping_cart (quantity, user_id, product_id)
 					VALUES (?, ?, ?);
 					""";
 		}

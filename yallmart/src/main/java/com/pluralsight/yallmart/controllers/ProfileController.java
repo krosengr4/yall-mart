@@ -13,7 +13,7 @@ import java.security.Principal;
 
 @RestController
 @CrossOrigin
-@RequestMapping("profile")
+@RequestMapping("profiles")
 public class ProfileController {
 
 	private final ProfileDao profileDao;
