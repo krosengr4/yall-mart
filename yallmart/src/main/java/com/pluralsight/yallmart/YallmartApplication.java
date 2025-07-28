@@ -9,7 +9,7 @@ public class YallmartApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(YallmartApplication.class, args);
 
-		System.out.println("Y'ALL COME BACK NOW YA HEAR!!!");
+		System.out.println("http://localhost:63342/yallmart/FRONTEND/index.html?_ijt=q4sdurrvt8jme3hcfgu72843dp&_ij_reload=RELOAD_ON_SAVE");
 	}
 
 }
